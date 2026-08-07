@@ -1,0 +1,29 @@
+Entonces, invocamos el compilador:
+
+    $ fpc -Co -Cr -Miso -gl hola.pas
+
+Se impone analizar este comando palabra por palabra:
+
+    fpc es el nombre del compilador Free Pascal.
+    hola.pas es el nombre del archivo que contiene el programa fuente (código Pascal).
+    -Co -Cr son opciones que le indican al compilador que debe generar el control de rangos y desborde de operaciones aritméticas.
+    -gl hace que el compilador en caso de error en tiempo de ejecución, indique la línea del código fuente donde se produce dicho error.
+    -Miso es una opción que hace que el compilador se aproxime más al Pascal estándar (el del libro).
+
+No le tengo que dar permisos a las scripts para correrlas
+Las corro de la misma forma en que correría cualquier otra script ./nombreScript
+
+Lo que me genera duda es que el compilador genera dos archivos, un [holamundo] y [holamundo.o]
+
+holamundo.pas
+     │
+     ▼
+  compilación
+     │
+     ├── holamundo.o    ← Estado de por medio, aún no es ejecutable
+     │
+     ▼
+  enlazado (linking)    ← Combina con otras partes de RTL de pascal y bibliotecas requeridas, así generando el ejecutable
+     │
+     ▼
+  holamundo       ← ejecutable

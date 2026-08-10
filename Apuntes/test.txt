@@ -27,3 +27,11 @@ holamundo.pas
      │
      ▼
   holamundo       ← ejecutable
+
+
+  anidamiento if-then-else con if-then
+
+  if cond1 then
+   if cond2 then instruccion-1
+   else
+      instruccion-2

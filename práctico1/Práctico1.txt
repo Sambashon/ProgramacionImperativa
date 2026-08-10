@@ -1,0 +1,97 @@
+1. Identificadores
+(a) Determine cuales de los siguientes identificadores son validos
+- Promedio  - A1234
+- Program   -Jorge
+
+(b) Explique por qu ́e no ser ́ıa correcto usar los siguientes identificadores para sus defini-
+ciones
+I) 1986 -> Empieza con un número
+II) Vel*Tiempo -> Tiene un símbolo
+III) End -> es una palabra reservada
+IV) 1End -> Empieza con un número
+V) Integer -> Es una palabra reservada
+VI) Var -> Es una palabra reservada
+VII) Sqrt -> Es el nombre de una funcion, es mala práctica tener una var y una función del mismo nombre
+VIII) $EFECTIVO -> Empiza con un símbolo
+
+------------------------------------------------------------------
+
+2. Declaraciones de constantes y variables.
+(a) Determine cuáles de las siguientes declaraciones de constantes son válidas.
+□ CONST impuesto = 0.09; Es válido, debido a que está declarando una variable constante y utilizando el operador "=", que se usa para declarar variables que no van a cambiar
+□ CONST pi := 3.14; Es inválido, usa el operador ":=", este solo se usa para las variables cuyo dato puede cambiar
+□ CONST diez = 9; Es válido
+□ $Acalif := 90; No es válido, debido a que no declara el tipo de variable y el nombre de variable no es válido
+
+(b) Determine cu ́ales de las siguientes declaraciones de variables son v ́alidas.
+□ VAR num1, num2 : Real; Es válido, declara varias variables separadas por comas, seguida por dos puntos, el tipo de dato y el punto y coma al final.
+□ VAR num1; num2 : Integer; Es inválido, las dos variables están separadas por un punto y coma en vez de una coma.
+□ VAR total, suma, cuenta : Es inválido, debido a que intenta declarar dos tipos de dato separados por una coma. 
+             Integer, Real;
+□ VAR idestudiante,
+    numsegsocial : Integer; Es válido
+□ VARnum1, num2 : Real; es Inválido, le falta un espacio para separar la palabra reservada "VAR" de la primer variable.
+□ var num1, num2:Integer; Es válida, Pascal no es un lenguaje case-sensitive. Ósea HOLA = hola
+
+------------------------------------------------------------------
+
+3. Valores v ́alidos de tipos b ́asicos.
+
+(a) Determine cu ́ales de los siguientes ejemplos son valores v ́alidos de tipo entero en
+Pascal.
+□ 189 Válido
+□ -2.5 Inválido, es de tipo Real
+□ ‘33’ Inválido, contiene una cadena de texto
+□ 6,632 Inválido, en Pascal no se permiten separadores de miles
+□ -5555 Válido, se permiten números negativos
+□ 2.5e03 Inválido, no se permiten números con notación científica
+□ 199. Inválido, no puede tener un punto decimal demás
+□ +199 Válido, Pascal permite específicar de que signo es el entero ya sea negativo o positivo
+□ maxint Válido, representa el valor más grande de un entero.
+
+(b) Determine cu´ales de los siguientes ejemplos son valores v´alidos de tipo real en Pascal.
+□ -0.01 Válido
+□ .025 No es válido, debido a que le falta el cero a la izquierda del decimal
+□ -3.6  Válido
+□ 3.6e-06 Válido
+□ 3.e-06 Inválido, para poner la "e" se requiere de un número antes y no simplemente un punto decimal
+□ +8.3e2 Válido
+□ 1.0e1. Inválido, tiene un punto decimal colgando vacío
+□ maxreal Es válido pero dependiendo del compilador
+
+(c) Determine cu´ales de los siguientes ejemplos son valores v´alidos de tipo car´acter en
+Pascal.
+□ A Inválido, le faltan las comillas
+□ 'A' Válido
+□ 'CAT' Inválido, es de tipo string y no char
+□ '8' Válido
+□ '?' Válido
+□ '??' Inválido, es de tipo string y no char
+
+(d) Determine cu´ales de los siguientes valores pueden aparecer en una declaraci´on de
+constante. Determine el tipo de cada uno de ellos.
+□ 'e'   Char o string, si, puede aparecer
+□ e     Ninguno, no es ni char, ni string ni un número
+□ false Boolean, si, puede aparecer
+□ 999   Int, si, puede aparecer
+□ 3.e   Valor inválido, le faltan partes a esa notación científica
+□ -maxint Int, puede aparecer
+□ -0.000 Real o Long, es válido
+□ '?' Char o string, puede aparecer
+□ !   Ninguno, el compilador lo toma como parte de un operador lógico
+
+------------------------------------------------------------------
+
+4. Dada la siguiente declaraci ́on de variables:
+VAR
+    temp, valor : Integer;
+    num, suma : Real;
+
+Determine cu ́ales de las siguientes instrucciones de asignaci ́on son v ́alidas.
+□ num := temp + valor Válido, se suman dos enteros y se convierten a número real
+□ valor := num + temp Inválido, Un real y un entero se suman pero los dos se vuelven en reales, después intenta pasar ese resultado real a una variable de tipo entero
+□ num := suma Válido, se le asigna el valor de un real a otro real
+□ valor := num + 3 Inválido, se le asigna el valor de un real a un entero
+□ num := valor / temp 
+□ valor := num / temp
+□ num := num DIV valor

@@ -14,7 +14,9 @@ end
 else
 begin
     excedente := peso-1;
-    precio := 77 + excedente * 56;
+    precio := 77 + trunc(excedente) * 56;
+    if trunc(excedente) <> excedente then
+    precio := precio + 56;
 end;
 
 writeln('Peso   |    Precio');

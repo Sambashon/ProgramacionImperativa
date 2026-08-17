@@ -35,3 +35,13 @@ holamundo.pas
    if cond2 then instruccion-1
    else
       instruccion-2
+
+
+El Orden de Prioridad (Jerarquía)
+1. Paréntesis ( ): Tienen la máxima prioridad. Todo lo que esté adentro se calcula primero.
+2. Operadores de Negación y Signo: not, - (negativo unario) y + (positivo unario).
+3. Multiplicación y División: *, /, div (división entera) y mod (resto de la división).
+4. Suma y Resta: + y -.
+5. Operadores de Relación / Comparación: =, <>, <, >, <=, >=, in.
+
+Si tienen la misma jerarquía entonces se calcula de izquierda a derecha

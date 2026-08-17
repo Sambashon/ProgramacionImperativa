@@ -1,0 +1,7 @@
+readln(dato);
+for i:=1 to lado do
+begin
+    for j:=1 to lado do
+        write('*');
+    writeln
+end;

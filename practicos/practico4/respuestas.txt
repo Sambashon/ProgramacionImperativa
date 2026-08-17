@@ -1,0 +1,18 @@
+1
+(a) Salida del programa esperada
+flag
+1   2
+2   4
+3   6
+4   8
+INCORRECTO, LA SALIDA ES:
+                        1          2
+                        2          4
+                        3         12
+                        4         48
+
+(e)
+la salida es:
+            1          2          1
+            1          2          3          4          2
+            1          2          3          4          5          6          7          3

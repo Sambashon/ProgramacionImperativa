@@ -111,3 +111,162 @@ viii) 6 - 2.1 * 3 + 16 Real, 6 - (2.1*3) + 16 = 6 - 6.3 + 16 = 28.3
 ****DIV y MOD solo funcionan para enteros y devuelven enteros
 
 ------------------------------------------------------------------
+
+6. Dada la siguiente declaraci ́on de variables:
+VAR
+    acosto, bcosto, ccosto, dcosto: real;
+
+Considere las siguientes instrucciones de asignaci ́on que inicializan dichas variables:
+acosto := 4.0;
+bcosto := 1.0;
+ccosto := -2.0;
+dcosto := 5.5 -> A esta le falta el punto y coma
+
+Evalue cada una de las siguientes expresiones:
+i) sqrt (16) -> Raíz cuadrada, = 4
+ii) trunc (-13.8) -> Elimina el decimal y devuelve un valor de tipo entero = -13
+iii) round (10.7) -> Redondea al número entero más cercano y devuelve un entero = 11
+iv) sqr (5) -> Eleva al cuadrado = 25
+v) round (-3.5) -> = -4
+vi) abs (-12) -> Devuelve el valor absoluto, = 12
+vii) trunc (10.1) -> = 10
+viii) trunc (8.6) - round (8.6) -> 8 - 9 = -1
+ix) sqrt (acosto / bcosto - ccosto + dcosto - 2.5) -> sqrt((4.0/1.0) - (-2.0) + 5.5) = 3.39...
+x) trunc (dcosto) * abs (ccosto * (bcosto / acosto)) -> trunc(5.5)*abs(-2.0*(1.0/4.0)) = 5 * 0.5 = 2.5
+
+------------------------------------------------------------------
+
+7. Dada la siguiente declaración de variables:
+VAR
+    num, suma, total : Integer;
+    valor: Real;
+    car1, car2: Char;
+Determine cuáles de las siguientes instrucciones de asignación son válidas.
+
+□ num := num + num -> Válido, suma de entero con entero, asignado a un entero
+□ num := suma / total -> Válido, división entre enteros, asignado a un entero
+□ suma := num / total -> Válido, división entre enteros, asignado a un entero
+□ valor := total -> Válido, conversión de entero a real
+□ valor := total * num + suma -> Válido, multiplicación y suma entre enteros, asignado a un real
+□ valor := total + car1 -> Inválido, se intenta sumar un entero con un char
+□ car2 := car1 -> Válido, se asigna el valor de un char a otro char
+□ car2 := car1 + 1 -> Inválido, se intenta sumar un char junto a un número entero
+□ car2 := ‘car1’ -> Inválido, se intenta asignar un string a un char.
+
+------------------------------------------------------------------
+
+8. Para cada una de las siguientes expresiones, determine su tipo y evalúela (calcule su valor).
+i) 5 + sqr(3) - 4 + trunc(3.6 - 2.1) -> 5 + 1.73 - 4 + (3 - 2) = 6.73 - 5 = 1.73. REAL.
+ii) 3 * sqrt(8 MOD 6 * 10 DIV 5) -> 3 * sqrt(4) = 3*2 = 6. ENTERO.
+iii) 6 + 9 * 8 DIV 2 * round(1.362) - 2 * 3 ->  6 + (((9 * 8) DIV 2)* round(1.362)) - (2 * 3) = 36. Entero
+                                                      ' 72  'DIV 2
+                                                       '   36    ' * 1
+                                                           '   36   ' - 6 + 6
+                                                              '   36   '
+iv) trunc(12 / 5 * sqrt(4 + 4 * 3) / 4) ->  trunc(12 / 5 * sqrt(4 + 4 * 3) / 4)
+                                                  ' 2.4 '  *  ' 4.89 '
+                                                    '    11.75   '
+                                                    ' 11 ' / 4
+                                                       trunc'2'
+
+------------------------------------------------------------------
+
+9. ¿Cuál será la salida del siguiente programa al ejecutarlo en Pascal estándar? ¿y en Free
+Pascal?
+PROGRAM Verificar;
+VAR
+    i : Integer;
+    r : Real;
+BEGIN
+    r := i + 1;
+    writeLn (i,r)
+END.
+Salida esperada: 
+    0, 1.0
+Salida real:
+    0 1.0000000000000000e+000
+
+------------------------------------------------------------------
+
+10. Para cada uno de los siguientes programas en Pascal, trate de anticipar cuál va a ser la
+salida que emitirá al ejecutarlo. Después, ejecútelo en máquina y compare lo que esperaba
+con la salida que se exhibe. Ejecute el segundo programa varias veces, y use números tanto
+positivos como negativos, con partes fraccionarias mayores, menores, y exactamente iguales
+que 0.5. Cuando el programa espere el dato de entrada, introduzca su número real y digite
+ENTER.
+
+PROGRAM Muestra1;
+CONST
+pi = 3.1415926535;
+r1 = 2.0;
+r2 = 5.0;
+VAR
+area: Real;
+BEGIN
+area := pi * r1 * r1;
+writeLn (r1, area);
+area := pi * sqr (r2);
+writeLn (r2, area)
+END.
+
+Salida esperada:
+2.0 | 12.566370614
+2.236067977 | 7.024814731
+
+Salida real:
+2.000000000e+00 | 1.2566370614000000e+001
+5.000000000e+00 | 7.8539816337500000e+001
+
+PROGRAM Muestra2;
+CONST
+medio = 0.5;
+VAR
+num : Real;
+a, b : Integer;
+BEGIN
+readLn (num);
+a := round (num);
+b := trunc (num + medio);
+writeLn (num, a, b)
+END.
+
+No lo voy a hacer q 
+
+------------------------------------------------------------------
+
+11. Considere las siguientes dos propiedades:
+i) ln(ab ) = b × ln(a)
+ii) eln(x) = x
+donde a y b son reales y a > 0.
+
+Utilizando dichas propiedades, el operador de multiplicación (∗) y las funciones estándar
+de Pascal ln y exp escriba una expresión en Pascal que produzca el valor de ab . Luego
+escriba un programa que evalúe dicha expresión y emita el resultado en la salida estándar.
+Los valores para a y b serán leidos desde la entrada estándar.
+La descripción de las funciones exp y ln se encuentra en el Apéndice D del libro del curso,
+bajo el tı́tulo Funciones y Procedimientos Estándar (pag. 584).
+
+**exp(x) = e^x
+
+var
+    a, b, resultado:int;
+
+resultado := exp(b * ln(a));
+
+------------------------------------------------------------------
+
+12. En este ejercicio suponga que los datos de entrada serán siempre válidos, los programas
+a implementar no necesitan efectuar ese control. Verifique que los programas definidos
+funcionen correctamente para diferentes datos de entrada. Aplique todas las herramientas
+conceptuales y de Pascal que ha aprendido hasta el momento.
+
+i) Escriba un programa que calcule el perı́odo de un péndulo de longitud l y emita el
+resultado en la salida estándar. El perı́odo de un péndulo está dado por la siguiente
+ecuación t = 2 × pi × sqrt(l/g) donde pi = 3,14, g = 9,8 y l es leı́do de la entrada
+estándar.
+
+ii) Escriba programa que calcule el área de un triángulo cuyos lados son de longitud a,
+b y c (los cuales serán leidos de la entrada estándar) y emita el resultado en la salida
+estándar. El área A de un triángulo se puede calcular a partir de sus lados usando la
+fórmula A = sqrt(s × (s − a) × (s − b) × (s − c)) donde s = (a + b + c)/2.
+

@@ -1,0 +1,38 @@
+while condicion do
+begin
+    //instruccion
+end;
+
+La condicion debe ser booleana
+Debe haber una variable centinela que se actualice dentro del while, con tal de que se deje de cumplir la condición,
+para que el while no entre en un bucle infinito.
+
+
+Determinar si un número es primo
+    - Un número natural es primo si es mayor que uno y es divisible únicamente entre sí mismo y la unidad.
+    - Un procedimiento para determinar si un número n es primo es recorrer todo el intervalo entre 2 y n-1 buscando si hay divisores de natural
+
+Hay otro camino que es que usemos el rango de 2...n DIV 2
+Hay otro que es mejor que va 2...sqrt(n) -> es recomendado aplicarle trunc
+
+SOLUCIÓN:
+
+var
+    fin, numero, divisor : integer;
+begin
+readln(numero);
+if numero < 2 then
+    writeln('El numero no es primo');
+else
+begin
+    fin := trunc(sqrt(numero));
+    divisor := 2;
+    while (divisor <= fin) and (numero mod divisor <> 0 ) do
+        divisor := divisor + 1;
+
+        if divisor <= fin then 
+            writeln('El numero',numero,'no es primo');
+        else
+            writeln('El numero',numero'es primo);
+    end
+end.

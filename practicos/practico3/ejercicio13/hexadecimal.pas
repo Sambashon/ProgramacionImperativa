@@ -1,3 +1,4 @@
+{INCOMPLETO}
 program hexadecimal;
 var 
     ea, eb, ec : char;

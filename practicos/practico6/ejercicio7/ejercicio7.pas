@@ -1,20 +1,33 @@
 program ejercicio7;
 
 var
-	m, n, resultado, mayor, i: integer;
+	m, n, resultado, mayor, i, k: integer;
 
 begin
-    writeln('Ingrese dos números enteros, el primer');
+    resultado := 0; 
+    writeln('Ingrese dos números enteros');
     readln(n, m);
-
-    if (n > m) then
+    
+    if (n > m) then 
     begin
-        mayor := mayor * 10;
-        
+        mayor := n * 10; 
+        writeln(mayor);
+
         while (resultado < mayor) do
         begin
-            for i =: 1 to 10 do
-                resultado := m * i 
+            for k := m to n do
+            begin
+                writeln('tabla del ', k);
+                for i := 1 to 10 do
+                begin
+                    resultado := k * i;
+                    writeln(resultado);
+                end;
+            end; 
         end;
+    end
+    else
+    begin
+        writeln('Error');
     end;
 end.

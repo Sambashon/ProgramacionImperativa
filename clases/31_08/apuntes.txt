@@ -1,0 +1,75 @@
+HOY SE TRABAJO CON EL PRACTICO 7
+
+Las funciones no se pueden usar como argumentos, las funciones pueden recibir varios argumentos.
+El nombre de una función es su identificador. Se utiliza para especificar el valor que retorna la funcioón.
+
+
+function potencia(base : real; exponente : integer) : real;
+(* pre condicion: (base<>0) or (exponente<>0) *)
+    var 
+    pot : real;
+    i : integer;
+    negativo : boolean;
+begin
+    negativo := exponente < 0;
+    exponente := abs(exponente);
+    pot := 1;
+    for i := 1 to exponente do
+        pot := pot * base;
+        if negativo then
+            potencia:= 1 / pot
+        else
+            potencia:= pot
+end;
+
+OBSERVACIÓN IMPORTANTE
+potencia no es una variable. No se puede utilizar para guardar datos
+
+potencia := potencia * valor; {incorrecto}
+respuesta := potencia * valor; {correcto}
+
+Funciones booleanas verifican la validez de una propiedad
+
+function esPrimo(numero:integer): boolean; 
+
+SE DECLARAN ANTES DEL TODO, e indican el argumento que van a recibir con su tipo y además indican 
+el tipo de la salida de la función.
+
+Los párametros (párametros formales) son las variables que aparecen en el encabezado de la función 
+
+Los argumentos (párametros verdaderos) son las expresiones que aparecen en la invocación de la funcion.
+
+Para cada parámetro, su tipo y el tipo del respectivo argumento deben ser compatibles
+
+------------------------------------------------------------------------------------------
+
+Una función puede usar variables internas
+Por ejemplo, para calcular un cuadrado:
+
+function cuadrado(x: real): real;
+var
+    resultado: real;
+begin
+    resultado := x * x;
+    cuadrado := resultado;
+end;
+
+------------------------------------------------------------------------------------------
+
+Una función puede no tener parámetros
+
+Por ejemplo:
+
+function numeroCinco: integer;
+begin
+    numeroCinco := 5;
+end;
+
+------------------------------------------------------------------------------------------
+
+PROCEDIMIENTOS
+    - No retornan su valor en su nombre
+    - Se invocan como una instrucción independiente
+    - El encabezao de un procedimiento tiene esta forma:
+        procedure nombre ( listaparametros );
+        

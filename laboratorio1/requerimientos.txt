@@ -1,0 +1,37 @@
+Esta es una lista de los requerimientos funcionales y/o no funcionales que requiere el primer laboratorio
+
+Requerimientos funcionales
+RF-01: Debe funcionar con las 26 letras del léxico
+RF-02: Trabaja con minúsculas y mayúsculas
+RF-03: No maneja tildes, ni contiene números, símbolos, ni "ñ"
+RF-04: Las palabras serán separadas con un único SEPARADOR, 
+las palabras no pueden comenzar con SEPARADOR
+RF-05: Las oraciones solo pueden comenzar con un FINALIZADOR o con una palabra
+RF-06: Una oración sin palabras es válida
+RF-07: Se edebe implementar el siguiente subrpograma:
+procedure conteoOracion(maxCantPalabras: integer;
+    var cantA, cantE, cantI, cantO, cantU, cantConsonantes : integer;
+    var oracionNula, superaMaximo : boolean;
+    var largoPromedio : real);
+
+obs:
+conteoOracion lee de la entrada estándar una oración, es decir, una cadena de
+caracteres terminada en FINALIZADOR, donde cada palabra está separada por
+un SEPARADOR. Además, recibe en maxCantPalabras el largo máximo que puede
+tener la oración en palabras (estrictamente mayor que cero). Finalmente,
+retorna en los parámetros de salida
+
+RF-08: cantX (X ∈ {‘A’, ‘E’, ‘I’, ‘O’,‘U’}) la cantidad de ocurrencias de la
+vocal correspondiente.
+RF-09: cantConsonantes: la cantidad de ocurrencias de consonantes.
+RF-10: oracionNula: indica si la oración no tiene ninguna palabra.
+RF-11: superaMaximo: indica si la oración tiene más palabras que maxCantPalabras.
+RF-12: largoPromedio: contiene el promedio del largo de las palabras
+
+
+
+--------------------------------------------------
+
+Requerimientos no funcionales
+RNF-01: debe ser entregado en un sólo archivo
+RNF-02: El archivo se debe llamar tarea1.pas

@@ -1,16 +1,9 @@
-program tarea1;
-const
-   SEPARADOR   = ' ';   { caracter que separa palabras }
-   FINALIZADOR = '.';   { caracter que determina fin de oración }
+
 var
     cantMax: integer;
     c: char; {lo que leo}
 
-    cantA, cantE, cantI, cantO, cantU: integer;
-    cantConsonantes, cantPalabras, cantCaracteres: integer;
-
-    oracionNula, superaMaximo: boolean;
-    largoPromedio: real;
+    cantPalabras, cantCaracteres: integer;
 
 function promedio(c: char; var cantPalabras, largoPalabra, largoTotalPalabras: integer) : real;
 begin
@@ -54,7 +47,7 @@ begin
     end;
 end;
 
-{-------------------------------------------------------------------------------------------------------------------}
+
 
 procedure conteoOracion(maxCantPalabras: integer;
     var cantA, cantE, cantI, cantO, cantU, cantConsonantes: integer;
@@ -99,6 +92,8 @@ begin
             largoPromedio := promedio(c, cantPalabras, largoPalabra, largoTotalPalabras)
 
     until (c = FINALIZADOR); {lee hasta encontrar el finalizador}
+end;
+    {
     writeln('------------------------------------');
     writeln('Analisis de oracion');
     writeln('Palabras: ', cantPalabras:0);
@@ -129,15 +124,15 @@ begin
     end; 
 end;
 
-{-------------------------------------------------------------------------------------------------------------------}
-
 begin
-
-    writeln('------------------------------------'); {solicitud de datos}
+    
+    writeln('------------------------------------'); 
     write('Ingrese la cantidad maxima de palabras: ');
     readln(cantMax);
     write('Ingrese su oracion: ');
     conteoOracion(cantMax, cantA, cantE, cantI, cantO, cantU,
               cantConsonantes,
               oracionNula, superaMaximo, largoPromedio);
+    
 end.
+}

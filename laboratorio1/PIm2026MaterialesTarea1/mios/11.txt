@@ -6,7 +6,7 @@ ANÁLISIS DE LA ORACIÓN
 SI (Para el análisis se consideran las primeras 12 palabras)
 -------------------------------------
 ¿La oración es nula?
-NO (Largo promedio de palabra: 5.29)
+NO (Largo promedio de palabra: 4.92)
 -------------------------------------
 Ocurrencias de vocales:
 A: 12

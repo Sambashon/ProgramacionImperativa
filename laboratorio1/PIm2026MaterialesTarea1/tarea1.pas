@@ -18,13 +18,12 @@ begin
     promedio := largoTotalPalabras / cantPalabras;
 end;
 
-{-------------------------------------------------------------------------------------------------------------------}
-
 procedure contador(c: char; var cantA, cantE, cantI, cantO, cantU, cantConsonantes, cantCaracteres : integer; superaMaximo: boolean); {cuenta el total de caracters, identifica cuales son vocales, y cuales son consonantes, INTERNO}
 begin
-    cantCaracteres := cantCaracteres + 1;
     if superaMaximo = false then
     begin
+        cantCaracteres := cantCaracteres + 1;
+
         case c of
         'a': cantA := cantA + 1;
         'e': cantE := cantE + 1;
@@ -47,7 +46,7 @@ begin
     end;
 end;
 
-
+{-------------------------------------------------------------------------------------------------------------------}
 
 procedure conteoOracion(maxCantPalabras: integer;
     var cantA, cantE, cantI, cantO, cantU, cantConsonantes: integer;
@@ -56,6 +55,7 @@ procedure conteoOracion(maxCantPalabras: integer;
 var
     cantCaracteres, cantPalabras: integer;
     largoPalabra, largoTotalPalabras: integer;
+    cantPalabrasParaPromedio: integer; { guarda cuántas palabras se llegaron a sumar en largoTotalPalabras }
 begin  
     {asigno valores iniciales a los contadores}
     cantA := 0;
@@ -71,15 +71,22 @@ begin
     largoPalabra :=  0;
     largoTotalPalabras := 0;
     largoPromedio := 0;
+    cantPalabrasParaPromedio := 0;
 
     {El repeat recorre mi oracion}
     repeat
         read(c); {leo caracter por caracter, y cada caracter es procesado atraves de contador}
         contador(c, cantA, cantE, cantI, cantO, cantU, cantConsonantes, cantCaracteres, superaMaximo); {por referencia recibe los valores de las variables locales dentro de conteoOracion}
-        
+
+        if superaMaximo = false then
+        begin
+            largoPromedio := promedio(c, cantPalabras, largoPalabra, largoTotalPalabras);
+            cantPalabrasParaPromedio := cantPalabras;
+        end;
+
         if c = SEPARADOR then
             cantPalabras := cantPalabras + 1; {determino si encontramos una palabra nueva}
- 
+
         if cantPalabras > maxCantPalabras then
             superaMaximo := true;
 
@@ -87,52 +94,12 @@ begin
         begin
             cantPalabras := 0;
             oracionNula := true;
-        end
-        else
-            largoPromedio := promedio(c, cantPalabras, largoPalabra, largoTotalPalabras)
+        end;
 
     until (c = FINALIZADOR); {lee hasta encontrar el finalizador}
-end;
-    {
-    writeln('------------------------------------');
-    writeln('Analisis de oracion');
-    writeln('Palabras: ', cantPalabras:0);
-    writeln('A: ', cantA:0);
-    writeln('E: ', cantE:0);
-    writeln('I: ', cantI:0);
-    writeln('O: ', cantO:0);
-    writeln('U: ', cantU:0);
-    writeln('Consonantes: ', cantConsonantes:0);
-
-    writeln('------------------------------------');
-
-    writeln('Excede el limite de palabras?');
-    if superaMaximo then
-        writeln('SI')
-    else
-        writeln('NO');
-
-    writeln('------------------------------------');
-
-    writeln('Es nula?');
-    if oracionNula then
-        writeln('SI')
-    else
-    begin
-        largoPromedio := largoTotalPalabras / cantPalabras;
-        writeln('NO, el promedio del largo de las palabras es: ', largoPromedio:0:2)
-    end; 
-end;
-
-begin
     
-    writeln('------------------------------------'); 
-    write('Ingrese la cantidad maxima de palabras: ');
-    readln(cantMax);
-    write('Ingrese su oracion: ');
-    conteoOracion(cantMax, cantA, cantE, cantI, cantO, cantU,
-              cantConsonantes,
-              oracionNula, superaMaximo, largoPromedio);
-    
-end.
-}
+    if oracionNula = false then
+        largoPromedio := largoTotalPalabras / cantPalabrasParaPromedio;
+
+end;
+   

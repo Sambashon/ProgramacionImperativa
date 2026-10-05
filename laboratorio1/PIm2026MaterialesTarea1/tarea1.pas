@@ -1,8 +1,6 @@
-
 var
     cantMax: integer;
     c: char; {lo que leo}
-
     cantPalabras, cantCaracteres: integer;
 
 function promedio(c: char; var cantPalabras, largoPalabra, largoTotalPalabras: integer) : real;
@@ -25,21 +23,13 @@ begin
         cantCaracteres := cantCaracteres + 1;
 
         case c of
-        'a': cantA := cantA + 1;
-        'e': cantE := cantE + 1;
-        'i': cantI := cantI + 1;
-        'o': cantO := cantO + 1;
-        'u': cantU := cantU + 1;
-
-        'A': cantA := cantA + 1;
-        'E': cantE := cantE + 1;
-        'I': cantI := cantI + 1;
-        'O': cantO := cantO + 1;
-        'U': cantU := cantU + 1;
-
+        'a', 'A': cantA := cantA + 1;
+        'e', 'E': cantE := cantE + 1;
+        'i', 'I': cantI := cantI + 1;
+        'o', 'O': cantO := cantO + 1;
+        'u', 'U': cantU := cantU + 1;
         {para no contar separador y finalizador}
-        ' ': cantConsonantes := cantConsonantes;
-        '.': cantConsonantes := cantConsonantes;
+        ' ', '.': cantConsonantes := cantConsonantes;
         else
             cantConsonantes := cantConsonantes + 1;
         end;

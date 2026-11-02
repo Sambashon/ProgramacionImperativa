@@ -1,0 +1,6 @@
+Para realizar una funcion recursiva necesitamos dos partes, el caso base y el caso inductivo. Parecido a herrmodel.
+El caso base lo que hace es ser el primer paso que se toma o también puede ser un edge case, además de esto,
+corta la repetición de la función recursiva. 
+
+Si luego del llamado interno de la función, hay instrucciones que quedan pendientes, se ejecutarán luego de haber
+hecho todas las repeticiones (luego de que se ejecute el caso base)

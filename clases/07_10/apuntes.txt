@@ -1,0 +1,29 @@
+Trabajamos con array, practico 9 Ej 3
+
+En pascal se pueden crear tipos de variables, ejemplo:
+type
+    CadenaN = array [1...N] of integer;
+
+Tipos de datos definidos por el programador
+- Hasta ahora se vio que existen tipos de datos predefinidos (por ejemplo: integer, char,
+etc.).
+- Pascal permite que el programador defina nuevos tipos de datos en un programa.
+- Para definir un nuevo tipo de datos, se utiliza la palabra reservada type
+- Existen diversas categorías de tipos de datos que pueden ser definidos por el programador
+(por ej.: subrangos, enumerados y estructurados).
+
+Tipos de datos definidos por el programador
+- Hasta ahora se vio que existen tipos de datos predefinidos (por ejemplo: integer, char,
+etc.).
+- Pascal permite que el programador defina nuevos tipos de datos en un programa.
+- Para definir un nuevo tipo de datos, se utiliza la palabra reservada type
+- Existen diversas categorías de tipos de datos que pueden ser definidos por el programador
+(por ej.: subrangos, enumerados y estructurados).
+- En la clase de hoy veremos subrangos y arreglos (estos últimos constituyen un caso
+particular de tipo estructurado).
+
+
+
+Arreglos multidimensionales
+Pueden considerarse arreglos de arreglos, como un índice múltiple. Los arreglos bidimensionales se los llama matrices
+

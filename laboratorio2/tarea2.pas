@@ -1,8 +1,9 @@
 function sonIgualesPalabras(palabra1, palabra2: TPalabra): boolean;
 begin
-    { Reemplace este comentario y la instrucción por el código correspondiente a sonIgualesPalabras }
-    sonIgualesPalabras := false;
+
 end;
+
+function analisisIgualdad(palabra1)
 
 procedure buscarPalabraEnBanco(palabra: TPalabra; banco: TBancoPalabras; var encontre : boolean; var idBanco : integer);
 

@@ -1,0 +1,12 @@
+buscarPalabraEnBanco(palabra, partida.banco, encontre, idBanco);
+    if encontre = true then
+    begin
+        {fijarme si la longitud del tramo coincide con la longitud de la palabra, nose en cual tramo fijarme porque pueden haber varios?}
+        {partida -> ttramos -> ttramo.largo = palabra.largo ? }
+        {puedo preguntar por cada tramo del tablero, y fijarme si tiene igual longitud que la palabra}
+        {luego debo preguntar si esta desocupado }
+        for i := 1 to partida.tramos.cantidad do
+            if (partida.tramos[i].tramo.largo = palabra.largo) and (partida.tramos[i].tramo.ocupado = false) then 
+                {se cumplen las condiciones entonces puedo isnertar}
+                {pero el for sigue buscando tramos, que pasa si tengo dos tramos de igual longitud y desocupados, entonces repite y reinserta la palabra desocupada}
+    end;

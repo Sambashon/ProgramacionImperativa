@@ -23,7 +23,8 @@ end;
 procedure buscarPalabraEnBanco(palabra: TPalabra; banco: TBancoPalabras; var encontre : boolean; var idBanco : integer);
 var i : integer;
 begin
-    while (1 <= banco.cantidad) and (not encontre) do {recorro hasta que encuentro}
+    i := 1;
+    while (i <= banco.cantidad) and (not encontre) do {recorro hasta que encuentro}
     begin
         if sonIgualesPalabras(palabra, banco.arreglo[i].palabra) then
         begin
@@ -31,8 +32,10 @@ begin
             idBanco := i;
         end
         else
+        begin
             encontre := false;
             i := i + 1;
+        end;
     end;
 end;
 
@@ -43,7 +46,7 @@ var
     idBanco, idTramo, i : integer;
 begin
     buscarPalabraEnBanco(palabra, partida.banco, encontre, idBanco);
-    buscarTramoPorPosicion(ori, partida.tramos, encontre, idTramo);
+    buscarTramoPorPosicion(pos, ori, partida.tramos, encontre, idTramo);
 
     {actualizo el tramo con ocupado e id banco y si esta insertada o no}
     partida.tramos.arreglo[idTramo].ocupado := true;
@@ -58,7 +61,7 @@ begin
     begin
         {actualizacion de multiplicidad | si en esa casilla ya existe una letra igual entonces multiplicidad 1, no me deberia de preocupar por reescribir porque total son la misma letra}
         if (partida.tablero[pos.fila, pos.columna].escrita = true) and (partida.tablero[pos.fila, pos.columna].letra = palabra.arreglo[i]) then
-            partida.tablero[pos.fila, pos.columna].multiplicidad := 2
+            partida.tablero[pos.fila, pos.columna].multiplicidad := partida.tablero[pos.fila, pos.columna].multiplicidad + 1;
         else
         begin
             partida.tablero[pos.fila, pos.columna].multiplicidad := 1;
@@ -69,21 +72,54 @@ begin
         end;
             
         case ori of
-            horizontal : pos.fila := pos.fila + 1;
-            vertical: pos.columna := pos.columna + 1;
+            horizontal : pos.columna := pos.columna + 1;
+            vertical: pos.fila := pos.fila + 1;
         end; 
     end;
 end;
 
 
 procedure buscarTramoPorIdBanco(idBanco: integer; tram: TTramos; var encontre: boolean; var idTramo: integer);
+var 
+    i : integer;
 begin
-
+    i := 1;
+    encontre := false;
+    while (i <= tram.cantidad) and (encontre = false) do {busco en tram y repito hasta que encuentre o me quede sin tramos por recorrer}
+    begin
+        if (tram[i].ocupado = true) and (tram[i].idBanco = idBanco) then {pregunto si esta ocupado, y luego pregunto }
+        begin
+            encontre := true;
+            idTramo := i;
+        end;
+        i := i + 1;
+    end;
 end;
 
 procedure eliminarPalabra(idBanco: integer; var partida : TPartida);
+var
+    encontre : boolean;
+    idTramo, i : integer;
+    tramo : TTramo;
 begin
+    buscarTramoPorIdBanco(idBanco, partida.tramos, encontre, idTramo);
+    tramo := partida.tramos.arreglo[idTramo];
 
+    for i := 1 to partida.banco.arreglo[idBanco].palabra.largo do {recorro para eliminar caracteres}
+    begin
+        partida.tablero[tramo.posicion.fila, tramo.posicion.columna].multiplicidad := partida.tablero[tramo.posicion.fila, tramo.posicion.columna].multiplicidad - 1;
+        if (partida.tablero[tramo.posicion.fila, tramo.posicion.columna].multiplicidad = 0) then
+        begin
+            partida.tablero[tramo.posicion.fila, tramo.posicion.columna].escrita := false;
+        end;
+        if (tramo.orientacion = horizontal)then
+            tramo.posicion.columna := tramo.posicion.columna + 1
+        else if (tramo.orientacion = vertical) then
+            tramo.posicion.fila := tramo.posicion.fila + 1;
+    end;
+
+    partida.tramos.arreglo[idTramo].ocupado := false;
+    partida.banco.arreglo[idBanco].insertada := false;
 end;
 
 function calcularPuntaje(tablero : TTablero) : TNatural;

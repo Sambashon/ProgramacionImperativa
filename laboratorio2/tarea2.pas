@@ -23,9 +23,7 @@ end;
 procedure buscarPalabraEnBanco(palabra: TPalabra; banco: TBancoPalabras; var encontre : boolean; var idBanco : integer);
 var i : integer;
 begin
-    {
-    ESTA MAL PORQUE REPITE INCLUSO SI Y A ENCONTRO LA PALABRA Y VUELVE A ACTUALIZAR ENCONTRE E IDBANCO
-    for i := 1 to banco.cantidad do
+    while (1 <= banco.cantidad) and (not encontre) do {recorro hasta que encuentro}
     begin
         if sonIgualesPalabras(palabra, banco.arreglo[i].palabra) then
         begin
@@ -34,18 +32,24 @@ begin
         end
         else
             encontre := false;
-    end;}
+            i := i + 1;
+    end;
 end;
 
 
 procedure insertarPalabra(pos: TPosicion; ori: TOrientacion; palabra: TPalabra; var partida : TPartida);
 var
     encontre : boolean;
-    idBanco : integer;
+    idBanco, idTramo : integer;
+    tram : TTramos;
 begin
     buscarPalabraEnBanco(palabra, partida.banco, encontre, idBanco);
     if partida.banco[idBanco].insertada = false then
-        write('Palabra no en el banco');
+    begin
+        buscarTramoPorPosicion(pos, ori, tram, encontre, idTramo);
+        if (partida.tramos[idTramo].tramo.largo = palabra.largo) and (partida.tramos[idTramo].tramo.ocupado = false) then 
+            {instrucciones de insercion}
+    end;
 end;
 
 

@@ -44,7 +44,7 @@ type
         posicion : TPosicion;
         largo : 1..N;
         case ocupado : boolean of
-            true: (idBanco : 1..MAX_CANT_PALABRAS);
+            true: (idBanco : 1..MAX_CANT_PALABRAS); {discriminante de un registro variante?}
             false: ();
     end;
 

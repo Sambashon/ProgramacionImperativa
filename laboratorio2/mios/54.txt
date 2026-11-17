@@ -26,7 +26,6 @@ Insertar palabra:
 Ingrese orientación (H/V), numero de fila y numero de columna separada por espacios:
 Ejemplo: H 3 5
 Ingrese palabra (terminada en punto): 
-Palabra no válida
 -------------------
 1. registro
 2. datos
@@ -36,7 +35,7 @@ Palabra no válida
 2 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
 3 ■ ■ ■ ■ ■ ■ □ ■ ■ 
 4 ■ ■ ■ ■ ■ ■ □ ■ ■ 
-5 ■ □ □ □ □ □ □ □ □ 
+5 ■ r e g i s t r o 
 6 ■ ■ ■ ■ ■ ■ □ ■ ■ 
 7 ■ ■ ■ ■ ■ ■ □ ■ ■ 
 8 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
@@ -51,7 +50,6 @@ Insertar palabra:
 Ingrese orientación (H/V), numero de fila y numero de columna separada por espacios:
 Ejemplo: H 3 5
 Ingrese palabra (terminada en punto): 
-Palabra no válida
 -------------------
 1. registro
 2. datos
@@ -59,11 +57,11 @@ Palabra no válida
   1 2 3 4 5 6 7 8 9 
 1 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
 2 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
-3 ■ ■ ■ ■ ■ ■ □ ■ ■ 
-4 ■ ■ ■ ■ ■ ■ □ ■ ■ 
-5 ■ □ □ □ □ □ □ □ □ 
-6 ■ ■ ■ ■ ■ ■ □ ■ ■ 
-7 ■ ■ ■ ■ ■ ■ □ ■ ■ 
+3 ■ ■ ■ ■ ■ ■ d ■ ■ 
+4 ■ ■ ■ ■ ■ ■ a ■ ■ 
+5 ■ r e g i s t r o 
+6 ■ ■ ■ ■ ■ ■ o ■ ■ 
+7 ■ ■ ■ ■ ■ ■ s ■ ■ 
 8 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
 9 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
 -------------------
@@ -74,7 +72,6 @@ Palabra no válida
 0. Salir
 Eliminar palabra
 Ingrese número de lista de la palabra a eliminar
-No se pudo eliminar
 -------------------
 1. registro
 2. datos
@@ -82,11 +79,11 @@ No se pudo eliminar
   1 2 3 4 5 6 7 8 9 
 1 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
 2 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
-3 ■ ■ ■ ■ ■ ■ □ ■ ■ 
-4 ■ ■ ■ ■ ■ ■ □ ■ ■ 
-5 ■ □ □ □ □ □ □ □ □ 
-6 ■ ■ ■ ■ ■ ■ □ ■ ■ 
-7 ■ ■ ■ ■ ■ ■ □ ■ ■ 
+3 ■ ■ ■ ■ ■ ■ d ■ ■ 
+4 ■ ■ ■ ■ ■ ■ a ■ ■ 
+5 ■ □ □ □ □ □ t □ □ 
+6 ■ ■ ■ ■ ■ ■ o ■ ■ 
+7 ■ ■ ■ ■ ■ ■ s ■ ■ 
 8 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
 9 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
 -------------------
@@ -116,7 +113,7 @@ Entrada 1:
 Entrada 2:
   Palabra: datos
   Largo: 5
-  Insertada: false
+  Insertada:  true
 Presione enter para continuar...-------------------
 MENU DE FUNCIONALIDADES EXTRA
 -------------------
@@ -132,7 +129,9 @@ verCasillaDetalles
 Ingrese posición (fila columna)
 casilla (5, 7):
   editable:  true
-  escrita: false
+  escrita:  true
+  Letra: t
+  Multiplicidad: 1
 Presione enter para continuar...-------------------
 MENU DE FUNCIONALIDADES EXTRA
 -------------------
@@ -158,7 +157,8 @@ Tramo 2:
   Columna: 7
   Orientación: Vertical
   Largo: 5
-  Ocupado: false
+  Ocupado:  true
+  Id en banco: 2
 
 Presione enter para continuar...-------------------
 MENU DE FUNCIONALIDADES EXTRA
@@ -175,11 +175,11 @@ verMultiplicidades
      1  2  3  4  5  6  7  8  9
   1  -  -  -  -  -  -  -  -  -
   2  -  -  -  -  -  -  -  -  -
-  3  -  -  -  -  -  -  *  -  -
-  4  -  -  -  -  -  -  *  -  -
-  5  -  *  *  *  *  *  *  *  *
-  6  -  -  -  -  -  -  *  -  -
-  7  -  -  -  -  -  -  *  -  -
+  3  -  -  -  -  -  -  1  -  -
+  4  -  -  -  -  -  -  1  -  -
+  5  -  *  *  *  *  *  1  *  *
+  6  -  -  -  -  -  -  1  -  -
+  7  -  -  -  -  -  -  1  -  -
   8  -  -  -  -  -  -  -  -  -
   9  -  -  -  -  -  -  -  -  -
 Presione enter para continuar...-------------------
@@ -200,11 +200,11 @@ Presione enter para continuar...-------------------
   1 2 3 4 5 6 7 8 9 
 1 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
 2 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
-3 ■ ■ ■ ■ ■ ■ □ ■ ■ 
-4 ■ ■ ■ ■ ■ ■ □ ■ ■ 
-5 ■ □ □ □ □ □ □ □ □ 
-6 ■ ■ ■ ■ ■ ■ □ ■ ■ 
-7 ■ ■ ■ ■ ■ ■ □ ■ ■ 
+3 ■ ■ ■ ■ ■ ■ d ■ ■ 
+4 ■ ■ ■ ■ ■ ■ a ■ ■ 
+5 ■ □ □ □ □ □ t □ □ 
+6 ■ ■ ■ ■ ■ ■ o ■ ■ 
+7 ■ ■ ■ ■ ■ ■ s ■ ■ 
 8 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
 9 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
 -------------------

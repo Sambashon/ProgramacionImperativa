@@ -37,7 +37,6 @@ Insertar palabra:
 Ingrese orientación (H/V), numero de fila y numero de columna separada por espacios:
 Ejemplo: H 3 5
 Ingrese palabra (terminada en punto): 
-Palabra no válida
 -------------------
 1. write
 2. if
@@ -54,7 +53,7 @@ Palabra no válida
 13. read
 -------------------
   1 2 3 4 5 6 7 8 9 
-1 □ □ □ □ □ ■ ■ ■ □ 
+1 w r i t e ■ ■ ■ □ 
 2 □ ■ ■ ■ □ ■ ■ ■ □ 
 3 □ □ ■ ■ □ ■ □ □ □ 
 4 □ ■ ■ □ ■ ■ ■ ■ □ 
@@ -73,7 +72,6 @@ Insertar palabra:
 Ingrese orientación (H/V), numero de fila y numero de columna separada por espacios:
 Ejemplo: H 3 5
 Ingrese palabra (terminada en punto): 
-Palabra no válida
 -------------------
 1. write
 2. if
@@ -90,11 +88,11 @@ Palabra no válida
 13. read
 -------------------
   1 2 3 4 5 6 7 8 9 
-1 □ □ □ □ □ ■ ■ ■ □ 
-2 □ ■ ■ ■ □ ■ ■ ■ □ 
-3 □ □ ■ ■ □ ■ □ □ □ 
-4 □ ■ ■ □ ■ ■ ■ ■ □ 
-5 □ □ □ □ ■ ■ ■ ■ □ 
+1 w r i t e ■ ■ ■ □ 
+2 h ■ ■ ■ □ ■ ■ ■ □ 
+3 i □ ■ ■ □ ■ □ □ □ 
+4 l ■ ■ □ ■ ■ ■ ■ □ 
+5 e □ □ □ ■ ■ ■ ■ □ 
 6 ■ ■ ■ □ □ □ □ ■ □ 
 7 ■ ■ ■ □ ■ ■ □ ■ □ 
 8 ■ □ □ □ ■ □ □ □ □ 
@@ -109,7 +107,6 @@ Insertar palabra:
 Ingrese orientación (H/V), numero de fila y numero de columna separada por espacios:
 Ejemplo: H 3 5
 Ingrese palabra (terminada en punto): 
-Palabra no válida
 -------------------
 1. write
 2. if
@@ -126,11 +123,11 @@ Palabra no válida
 13. read
 -------------------
   1 2 3 4 5 6 7 8 9 
-1 □ □ □ □ □ ■ ■ ■ □ 
-2 □ ■ ■ ■ □ ■ ■ ■ □ 
-3 □ □ ■ ■ □ ■ □ □ □ 
-4 □ ■ ■ □ ■ ■ ■ ■ □ 
-5 □ □ □ □ ■ ■ ■ ■ □ 
+1 w r i t e ■ ■ ■ □ 
+2 h ■ ■ ■ □ ■ ■ ■ □ 
+3 i f ■ ■ □ ■ □ □ □ 
+4 l ■ ■ □ ■ ■ ■ ■ □ 
+5 e □ □ □ ■ ■ ■ ■ □ 
 6 ■ ■ ■ □ □ □ □ ■ □ 
 7 ■ ■ ■ □ ■ ■ □ ■ □ 
 8 ■ □ □ □ ■ □ □ □ □ 
@@ -145,7 +142,6 @@ Insertar palabra:
 Ingrese orientación (H/V), numero de fila y numero de columna separada por espacios:
 Ejemplo: H 3 5
 Ingrese palabra (terminada en punto): 
-Palabra no válida
 -------------------
 1. write
 2. if
@@ -162,11 +158,11 @@ Palabra no válida
 13. read
 -------------------
   1 2 3 4 5 6 7 8 9 
-1 □ □ □ □ □ ■ ■ ■ □ 
-2 □ ■ ■ ■ □ ■ ■ ■ □ 
-3 □ □ ■ ■ □ ■ □ □ □ 
-4 □ ■ ■ □ ■ ■ ■ ■ □ 
-5 □ □ □ □ ■ ■ ■ ■ □ 
+1 w r i t e ■ ■ ■ □ 
+2 h ■ ■ ■ □ ■ ■ ■ □ 
+3 i f ■ ■ □ ■ □ □ □ 
+4 l ■ ■ □ ■ ■ ■ ■ □ 
+5 e l s e ■ ■ ■ ■ □ 
 6 ■ ■ ■ □ □ □ □ ■ □ 
 7 ■ ■ ■ □ ■ ■ □ ■ □ 
 8 ■ □ □ □ ■ □ □ □ □ 
@@ -181,7 +177,6 @@ Insertar palabra:
 Ingrese orientación (H/V), numero de fila y numero de columna separada por espacios:
 Ejemplo: H 3 5
 Ingrese palabra (terminada en punto): 
-Palabra no válida
 -------------------
 1. write
 2. if
@@ -198,11 +193,11 @@ Palabra no válida
 13. read
 -------------------
   1 2 3 4 5 6 7 8 9 
-1 □ □ □ □ □ ■ ■ ■ □ 
-2 □ ■ ■ ■ □ ■ ■ ■ □ 
-3 □ □ ■ ■ □ ■ □ □ □ 
-4 □ ■ ■ □ ■ ■ ■ ■ □ 
-5 □ □ □ □ ■ ■ ■ ■ □ 
+1 w r i t e ■ ■ ■ □ 
+2 h ■ ■ ■ n ■ ■ ■ □ 
+3 i f ■ ■ d ■ □ □ □ 
+4 l ■ ■ □ ■ ■ ■ ■ □ 
+5 e l s e ■ ■ ■ ■ □ 
 6 ■ ■ ■ □ □ □ □ ■ □ 
 7 ■ ■ ■ □ ■ ■ □ ■ □ 
 8 ■ □ □ □ ■ □ □ □ □ 
@@ -217,7 +212,6 @@ Insertar palabra:
 Ingrese orientación (H/V), numero de fila y numero de columna separada por espacios:
 Ejemplo: H 3 5
 Ingrese palabra (terminada en punto): 
-Palabra no válida
 -------------------
 1. write
 2. if
@@ -234,15 +228,15 @@ Palabra no válida
 13. read
 -------------------
   1 2 3 4 5 6 7 8 9 
-1 □ □ □ □ □ ■ ■ ■ □ 
-2 □ ■ ■ ■ □ ■ ■ ■ □ 
-3 □ □ ■ ■ □ ■ □ □ □ 
-4 □ ■ ■ □ ■ ■ ■ ■ □ 
-5 □ □ □ □ ■ ■ ■ ■ □ 
-6 ■ ■ ■ □ □ □ □ ■ □ 
-7 ■ ■ ■ □ ■ ■ □ ■ □ 
-8 ■ □ □ □ ■ □ □ □ □ 
-9 ■ ■ ■ □ □ ■ □ ■ ■ 
+1 w r i t e ■ ■ ■ □ 
+2 h ■ ■ ■ n ■ ■ ■ □ 
+3 i f ■ ■ d ■ □ □ □ 
+4 l ■ ■ r ■ ■ ■ ■ □ 
+5 e l s e ■ ■ ■ ■ □ 
+6 ■ ■ ■ c □ □ □ ■ □ 
+7 ■ ■ ■ o ■ ■ □ ■ □ 
+8 ■ □ □ r ■ □ □ □ □ 
+9 ■ ■ ■ d □ ■ □ ■ ■ 
 -------------------
 1. Insertar palabra
 2. Eliminar palabra
@@ -250,7 +244,7 @@ Palabra no válida
 4. Verificar funcionalidades individualmente
 0. Salir
 Calcular puntaje
-Puntos: 0
+Puntos: 20
 Presione enter para continuar...-------------------
 1. write
 2. if
@@ -267,15 +261,15 @@ Presione enter para continuar...-------------------
 13. read
 -------------------
   1 2 3 4 5 6 7 8 9 
-1 □ □ □ □ □ ■ ■ ■ □ 
-2 □ ■ ■ ■ □ ■ ■ ■ □ 
-3 □ □ ■ ■ □ ■ □ □ □ 
-4 □ ■ ■ □ ■ ■ ■ ■ □ 
-5 □ □ □ □ ■ ■ ■ ■ □ 
-6 ■ ■ ■ □ □ □ □ ■ □ 
-7 ■ ■ ■ □ ■ ■ □ ■ □ 
-8 ■ □ □ □ ■ □ □ □ □ 
-9 ■ ■ ■ □ □ ■ □ ■ ■ 
+1 w r i t e ■ ■ ■ □ 
+2 h ■ ■ ■ n ■ ■ ■ □ 
+3 i f ■ ■ d ■ □ □ □ 
+4 l ■ ■ r ■ ■ ■ ■ □ 
+5 e l s e ■ ■ ■ ■ □ 
+6 ■ ■ ■ c □ □ □ ■ □ 
+7 ■ ■ ■ o ■ ■ □ ■ □ 
+8 ■ □ □ r ■ □ □ □ □ 
+9 ■ ■ ■ d □ ■ □ ■ ■ 
 -------------------
 1. Insertar palabra
 2. Eliminar palabra

@@ -25,12 +25,11 @@ Insertar palabra:
 Ingrese orientación (H/V), numero de fila y numero de columna separada por espacios:
 Ejemplo: H 3 5
 Ingrese palabra (terminada en punto): 
-Palabra no válida
 -------------------
 1. hola
 -------------------
   1 2 3 4 5 6 7 8 9 
-1 □ □ □ □ ■ ■ ■ ■ ■ 
+1 h o l a ■ ■ ■ ■ ■ 
 2 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
 3 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
 4 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
@@ -62,7 +61,7 @@ Cantidad de palabras: 1
 Entrada 1:
   Palabra: hola
   Largo: 4
-  Insertada: false
+  Insertada:  true
 Presione enter para continuar...-------------------
 MENU DE FUNCIONALIDADES EXTRA
 -------------------
@@ -78,7 +77,9 @@ verCasillaDetalles
 Ingrese posición (fila columna)
 casilla (1, 4):
   editable:  true
-  escrita: false
+  escrita:  true
+  Letra: a
+  Multiplicidad: 1
 Presione enter para continuar...-------------------
 MENU DE FUNCIONALIDADES EXTRA
 -------------------
@@ -112,7 +113,8 @@ Tramo 1:
   Columna: 1
   Orientación: Horizontal
   Largo: 4
-  Ocupado: false
+  Ocupado:  true
+  Id en banco: 1
 
 Presione enter para continuar...-------------------
 MENU DE FUNCIONALIDADES EXTRA
@@ -127,7 +129,7 @@ MENU DE FUNCIONALIDADES EXTRA
 0. Volver a la partida
 verMultiplicidades
      1  2  3  4  5  6  7  8  9
-  1  *  *  *  *  -  -  -  -  -
+  1  1  1  1  1  -  -  -  -  -
   2  -  -  -  -  -  -  -  -  -
   3  -  -  -  -  -  -  -  -  -
   4  -  -  -  -  -  -  -  -  -
@@ -151,7 +153,7 @@ Presione enter para continuar...-------------------
 1. hola
 -------------------
   1 2 3 4 5 6 7 8 9 
-1 □ □ □ □ ■ ■ ■ ■ ■ 
+1 h o l a ■ ■ ■ ■ ■ 
 2 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
 3 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
 4 ■ ■ ■ ■ ■ ■ ■ ■ ■ 

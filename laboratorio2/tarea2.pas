@@ -24,6 +24,7 @@ procedure buscarPalabraEnBanco(palabra: TPalabra; banco: TBancoPalabras; var enc
 var i : integer;
 begin
     i := 1;
+    encontre := false;
     while (i <= banco.cantidad) and (not encontre) do {recorro hasta que encuentro}
     begin
         if sonIgualesPalabras(palabra, banco.arreglo[i].palabra) then
@@ -61,16 +62,17 @@ begin
     begin
         {actualizacion de multiplicidad | si en esa casilla ya existe una letra igual entonces multiplicidad 1, no me deberia de preocupar por reescribir porque total son la misma letra}
         if (partida.tablero[pos.fila, pos.columna].escrita = true) and (partida.tablero[pos.fila, pos.columna].letra = palabra.arreglo[i]) then
-            partida.tablero[pos.fila, pos.columna].multiplicidad := partida.tablero[pos.fila, pos.columna].multiplicidad + 1;
+            partida.tablero[pos.fila, pos.columna].multiplicidad := partida.tablero[pos.fila, pos.columna].multiplicidad + 1
         else
         begin
+            {si no esta escrito entonces se setea la multiplicidad en 1}
             partida.tablero[pos.fila, pos.columna].multiplicidad := 1;
             {colocacion de letra}
             partida.tablero[pos.fila, pos.columna].letra := palabra.arreglo[i];
             {actualizacion de escrita}
             partida.tablero[pos.fila, pos.columna].escrita := true;
         end;
-            
+        if i < palabra.largo then {para no excederme del total de letras, me daba runtime error porque seguia intentando sumar incluso luego de exceder el limite }
         case ori of
             horizontal : pos.columna := pos.columna + 1;
             vertical: pos.fila := pos.fila + 1;
@@ -87,7 +89,7 @@ begin
     encontre := false;
     while (i <= tram.cantidad) and (encontre = false) do {busco en tram y repito hasta que encuentre o me quede sin tramos por recorrer}
     begin
-        if (tram[i].ocupado = true) and (tram[i].idBanco = idBanco) then {pregunto si esta ocupado, y luego pregunto }
+        if (tram.arreglo[i].ocupado = true) and (tram.arreglo[i].idBanco = idBanco) then {pregunto si esta ocupado, y luego pregunto }
         begin
             encontre := true;
             idTramo := i;
@@ -112,10 +114,13 @@ begin
         begin
             partida.tablero[tramo.posicion.fila, tramo.posicion.columna].escrita := false;
         end;
-        if (tramo.orientacion = horizontal)then
-            tramo.posicion.columna := tramo.posicion.columna + 1
-        else if (tramo.orientacion = vertical) then
-            tramo.posicion.fila := tramo.posicion.fila + 1;
+        if i < partida.banco.arreglo[idBanco].palabra.largo then {lo mismo que insertar palabra, me excedia del limite del tamanio del tablero y en la ultima iteracion intentaba sumar uno mas}
+        begin
+            if tramo.orientacion = horizontal then
+                tramo.posicion.columna := tramo.posicion.columna + 1
+            else
+                tramo.posicion.fila := tramo.posicion.fila + 1;
+        end;
     end;
 
     partida.tramos.arreglo[idTramo].ocupado := false;
@@ -123,8 +128,14 @@ begin
 end;
 
 function calcularPuntaje(tablero : TTablero) : TNatural;
-
+var
+    filas, columnas, resultado : integer;
 begin
-    { Reemplace este comentario y la instrucción siguiente por el código correspondiente a calcularPuntaje }
-    calcularPuntaje := 0;
+    resultado := 0;
+    for filas := 1 to TAMANIO_TABLERO do
+        for columnas := 1 to TAMANIO_TABLERO do
+            if (tablero[filas, columnas].escrita) then
+                resultado := resultado + 1;
+    calcularPuntaje := resultado;
+            
 end;

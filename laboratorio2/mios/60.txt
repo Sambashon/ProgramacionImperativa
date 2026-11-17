@@ -46,12 +46,11 @@ Insertar palabra:
 Ingrese orientación (H/V), numero de fila y numero de columna separada por espacios:
 Ejemplo: H 3 5
 Ingrese palabra (terminada en punto): 
-Palabra no válida
 -------------------
 1. hola
 -------------------
   1 2 3 4 5 6 7 8 9 
-1 □ □ □ □ ■ ■ ■ ■ ■ 
+1 h o l a ■ ■ ■ ■ ■ 
 2 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
 3 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
 4 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
@@ -67,12 +66,12 @@ Palabra no válida
 4. Verificar funcionalidades individualmente
 0. Salir
 Calcular puntaje
-Puntos: 0
+Puntos: 4
 Presione enter para continuar...-------------------
 1. hola
 -------------------
   1 2 3 4 5 6 7 8 9 
-1 □ □ □ □ ■ ■ ■ ■ ■ 
+1 h o l a ■ ■ ■ ■ ■ 
 2 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
 3 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
 4 ■ ■ ■ ■ ■ ■ ■ ■ ■ 
